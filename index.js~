@@ -1,0 +1,151 @@
+let history = [{
+  marks: [],
+  status: "Game started"
+}];
+let moveNumber = 0;
+let xIsCurrentPlayer;
+let winner;
+
+
+for (let j = 0; j < 15; j++) {
+  history[0].marks.push(Array(15).fill(null));
+}
+
+
+function checkWinner(marks, j, i) {
+  const markType = marks[j][i];
+  const boardHeight = marks.length;
+  const boardWidth = marks[0].length;
+  
+  function checkLine(deltaJ, deltaI, reversedDeltaJ, reversedDeltaI) {
+    
+    function checkBound(checkedSquareJ, checkedSquareI) {
+      return checkedSquareJ < 0 || checkedSquareJ > boardHeight - 1 ||
+        checkedSquareI < 0 || checkedSquareI > boardWidth - 1;
+    }
+    
+    for (var k = 0; k < 4; k++) {
+      let checkedSquareJ = j + deltaJ(k);
+      let checkedSquareI = i + deltaI(k);
+      if (checkBound(checkedSquareJ, checkedSquareI) ||
+          marks[checkedSquareJ][checkedSquareI] !== markType) break;
+    }
+    
+    for (var l = 0; l < 4 - k; l++) {
+      let checkedSquareJ = j + reversedDeltaJ(l);
+      let checkedSquareI = i + reversedDeltaI(l);
+      if (checkBound(checkedSquareJ, checkedSquareI) ||
+          marks[checkedSquareJ][checkedSquareI] !== markType) break;
+    }
+    
+    if (k + l === 4) return true;
+    return false;
+  }
+
+  if (checkLine((k) => -(k + 1),
+                (k) => 0,
+                (l) => l + 1,
+                (l) => 0) ||
+      checkLine((k) => 0,
+                (k) => -(k + 1),
+                (l) => 0,
+                (l) => l + 1) ||
+      checkLine((k) => -(k + 1),
+                (k) => -(k + 1),
+                (l) => l + 1,
+                (l) => l + 1) ||
+      checkLine((k) => -(k + 1),
+                (k) => k + 1,
+                (l) => l + 1,
+                (l) => -(l + 1))) return markType;
+  return null;
+}
+
+
+function restoreBoard(i) {
+  let board = document.getElementsByClassName("board")[0];
+  let rows = board.children;
+  for (let j = 0; j < rows.length; j++) {
+    let squares = rows[j].children;
+    for (let i = 0; i < squares.length; i++) {
+      let square = squares[i];
+      square.textContent = history[moveNumber].marks[j][i];
+    }
+  }
+}
+
+function restoreInfo(i) {
+  let info = document.getElementsByClassName("info")[0];
+  let moves = info.children;
+  let removedMoves = [];
+
+  for (let j = i + 1; j < moves.length; j++) {
+    removedMoves.push(moves[j]);
+  }
+  for (let j = 0; j < removedMoves.length; j++) {
+    removedMoves[j].remove();
+  }
+}
+
+function clickMove(i) {
+  if (i < moveNumber) {
+    history = history.slice(0, i + 1);
+    moveNumber = i;
+    xIsCurrentPlayer = i % 2 === 0 ? "O" : "X";
+    winner = null;
+    
+    restoreBoard(i);
+    restoreInfo(i);
+  }
+}
+
+function clickSquare(j, i, square) {
+
+  function moveButtonClosure(moveNumber) {
+    return () => clickMove(moveNumber);
+  }
+  
+  if (!history[moveNumber].marks[j][i] && !winner) {
+    const newMarks = [];
+    for (let i = 0; i < 15; i++) {
+      newMarks.push(history[moveNumber].marks[i].slice());
+    }
+    newMarks[j][i] = xIsCurrentPlayer ? "X" : "O";
+    winner = checkWinner(newMarks, j, i);
+    let newStatus = newMarks[j][i] + " made a move at " + i + "-" + j;
+    if (winner) {
+      newStatus += " and won the game";
+    }
+
+    square.textContent = xIsCurrentPlayer ? "X" : "O";
+    history.push({
+      marks: newMarks,
+      status: newStatus
+    });
+    moveNumber++;
+    xIsCurrentPlayer = !xIsCurrentPlayer;
+
+    let newMoveButton = document.createElement("button");
+    newMoveButton.appendChild(document.createTextNode(newStatus));
+    newMoveButton.addEventListener("click", moveButtonClosure(moveNumber));
+    let newMove = document.createElement("li");
+    newMove.setAttribute("class", "move");
+    newMove.appendChild(newMoveButton);
+    document.getElementsByClassName("info")[0].appendChild(newMove);
+  }
+}
+
+
+let board = document.getElementsByClassName("board")[0];
+let rows = board.children;
+for (let j = 0; j < rows.length; j++) {
+  let squares = rows[j].children;
+  for (let i = 0; i < squares.length; i++) {
+    let square = squares[i];
+    square.addEventListener("click", () => clickSquare(j, i, square));
+  }
+}
+
+let info = document.getElementsByClassName("info")[0];
+let initialMoveButton = info.children[0].children[0];
+initialMoveButton.addEventListener("click", () => clickMove(0));

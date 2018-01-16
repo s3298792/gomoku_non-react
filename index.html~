@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="index.css">
+    <script type="text/javascript" src="index.js" defer></script>
+  </head>
+  
+  
+  <body>
+    <div class="game">
+      <div class="board">
+        <div class="row">
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+        </div>
+        
+        <div class="row">
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+        </div>
+        
+        <div class="row">
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+        </div>
+        
+        <div class="row">
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+        </div>
+        <div class="row">
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+        </div>
+        
+        <div class="row">
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+        </div>
+        
+        <div class="row">
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+        </div>
+        <div class="row">
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+        </div>
+        
+        <div class="row">
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+        </div>
+        
+        <div class="row">
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+        </div>
+        
+        <div class="row">
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+        </div>
+        
+        <div class="row">
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+        </div>
+        
+        <div class="row">
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+        </div>
+        
+        <div class="row">
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+        </div>
+        
+        <div class="row">
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+          <button class="square"></button>
+        </div>
+      </div>
+      
+      <ol class="info">
+        <li class="move">Game started</li>
+      </ol>      
+    </div>
+  </body>
+  
+</html>
